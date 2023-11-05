@@ -1,0 +1,267 @@
+.product-component {
+    color:black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.go-back-btn {
+    text-decoration: none;
+    color: #a5a0a0;
+    font-weight: 400;
+}
+
+.features-div{
+    padding-left: 5vw;
+    width: 90vw;
+} 
+
+.product-wrapper img,
+.product-wrapper > div,
+.in-the-box {
+    width: 90vw;
+    padding-left: 5vw;
+}
+
+.product-component h4 {
+    color: #D87D4A;
+    font-weight: 300;
+    letter-spacing: .2rem;
+}
+
+.product-component h2 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.product-component p {
+    width: 87%;
+    color: #a5a0a0;
+    font-weight: 400;
+    font-size: .95rem;
+    line-height: 1.5;
+}
+
+.in-the-box > ul {
+    padding: 0;
+}
+
+.in-the-box li {
+    list-style: none;
+    color: #a5a0a0;
+    font-weight: 400;
+    font-size: .95rem;
+}
+
+.in-the-box li span {
+    margin-right: 1em;
+    color: #D87D4A;
+    font-weight: 600;
+}
+
+.price {
+    margin-bottom: 1rem;
+}
+
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    width: 120px;
+}
+
+.minus, 
+.plus,
+.count {
+    font-size: 20px;
+    height: 48px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-grow: 1;
+    border: none;
+    cursor: pointer;
+    background-color: #f6f6f6;
+    transition: background-color 0.3s;
+}
+
+.minus:hover, 
+.plus:hover {
+    background-color: #e0e0e0;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 1rem;
+}
+
+.gallery > img {
+    width: 90%;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.other-product img{
+    width: 90%;
+}
+
+.other-product button,
+.add-to-cart {
+    border: none;
+    background-color: #D87D4A;
+    color: #FFFFFF;
+    font-weight: 600;
+    height: 3.5em;
+    width: 11em;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+.other-products-wrapper {
+    margin: auto;
+}
+
+.other-products-wrapper h3,
+.other-products-wrapper div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.other-products-wrapper h3{
+    margin-top: 3rem;
+}
+
+@media(min-width:375px){
+    .product-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .product-wrapper img {
+        height: 70vw;
+        max-height: 480px;
+        width: auto;
+    }
+
+    .product-wrapper > div{
+        width: 40vw;
+    }
+
+    .product-wrapper > div *{
+        margin-bottom: 2rem;
+    }
+
+    .other-product h3{
+        white-space: nowrap;    
+        overflow: hidden;   
+        text-overflow: ellipsis;    
+    }
+
+    .other-product button{
+        font-size: 1.7vw;
+    }
+
+    .in-the-box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 2rem;
+    }
+    
+    .in-the-box h3{
+        margin: 0;
+    }
+
+    .in-the-box li{
+        margin-bottom: 10px;
+    }
+
+    .product-component h3{
+        font-size: 1.7rem;
+    }
+
+    .gallery{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .gallery > img {
+        width: calc(90vw / 2);
+    }
+
+    .gallery-img-3{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        height: 100%;
+    }
+
+    .other-products-wrapper > div{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .other-product{
+        flex-shrink: .5;
+    }
+
+    .other-product img{
+        width: 80%;
+    }
+}
+
+@media (min-width:768px) {
+
+    .product-wrapper img{
+        height: auto;
+        width: 45vw;
+    }
+    .product-wrapper > div *{
+        margin-bottom: 1rem;
+    }
+
+    .description-wrapper{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 3.5rem;
+    }
+
+    .description-wrapper * {
+        width: 100%;
+    }
+
+    .in-the-box li{
+        margin-top: 1.5rem;
+    }
+
+    .in-the-box{
+        display: block;
+    }
+
+    .other-products-wrapper > div{
+        max-width: 75%;
+    }
+
+    .other-product button{
+        height: 48px;
+        width: 160px;
+        font-size: .8rem;
+    }
+}

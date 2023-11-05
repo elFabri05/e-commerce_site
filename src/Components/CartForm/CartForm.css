@@ -1,0 +1,63 @@
+.cart-form {
+    color: #101010;
+    background-color: #fafafa;
+    padding-top: 15px;
+    padding-bottom: 22.5px;
+}
+
+.go-back-btn {
+    text-decoration: none;
+    color: #a5a0a0;
+    font-weight: 400;
+    margin-left: 22.5px;
+}
+
+.cart-form-wrapper {
+    background-color: #ffffff;
+    width: 330px;
+    /* height: 1378px; */
+    border-radius: 5px;
+    /* display: flex;
+    align-items: center; */
+    margin: 2rem auto;
+    padding: 22.5px;
+}
+
+.cart-form-wrapper h5 {
+    color: #D87D4A;
+}
+
+.cart-form-wrapper label {
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.cart-form-wrapper input {
+    margin: .4rem 0 .8rem;
+    padding: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 5px;
+    border:1px solid #a5a0a0;
+    box-shadow: none;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* .radio-wrapper {
+    border: 3px solid #a5a0a0;
+    border-radius: 5px;
+    width: 100%;
+    height: 3.5rem;
+} */
+
+.cart-form-wrapper .radio-input {
+    width: 10px;
+    height: 10px;
+}
+
+.cart-form-wrapper .radio-label {
+    font-size: .9rem;
+    padding-left: 1rem;
+}
