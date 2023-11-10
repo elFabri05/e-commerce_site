@@ -1,13 +1,16 @@
-import { create } from "zustand";
+import { create } from "zustand"
+import { persist, createJSONStorage } from 'zustand/middleware'
 
-const useStore = create((set) => ({
+const useStore = create(
+  persist(
+  (set) => ({
     products: {
-        xx59: { quantity: 0, price: 899 },
-        xx99mark1: { quantity: 0, price: 1750 },
-        xx99mark2: { quantity: 0, price: 2999 },
-        yx1: { quantity: 0, price: 599 },
-        zx7: { quantity: 0, price: 3500 },
-        zx9: { quantity: 0, price: 4500 },
+        yx1: { quantity: 3, id: 0},
+        xx59: { quantity: 2, id: 1},
+        xx99mark1: { quantity: 0, id: 2},
+        xx99mark2: { quantity: 1, id: 3},
+        zx7: { quantity: 0, id: 4},
+        zx9: { quantity: 0, id: 5},
       },
     increment: (prod) => 
         set((state) => ({
@@ -35,7 +38,7 @@ const useStore = create((set) => ({
                 ...state.products,
                 [prod]: {
                   ...state.products[prod],
-                  quantity: state.products[prod].quantity = 0,
+                  quantity: 0,
                 },
               },
             })),
@@ -47,6 +50,12 @@ const useStore = create((set) => ({
     //     }, {}),
     // })),
         
-}))
+}),
+{
+  name: 'products-store',
+  storage: createJSONStorage(() => localStorage),
+}
+)
+)
 
 export default useStore

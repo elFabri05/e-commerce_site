@@ -28,14 +28,14 @@ function App() {
         <Navbar />
         {/* <Hero />  */}
         {/* <Home /> */}
-        <Headphones />
+        {/* <Headphones /> */}
         {/* <Speakers />  */}
         {/* <Earphones /> */}
-        {/* <Zx9 /> */}
+        <Zx9 />
         {/* <Yx1 /> */}
         {/* <Menu /> */}
         {/* <Xx99Mark1 /> */}
-        {/* <CartForm /> */}
+        <CartForm />
         {/* <Cart /> */}
         <FooterAnnexe />
         <Footer />

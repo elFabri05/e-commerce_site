@@ -13,7 +13,7 @@ function Category({path}) {
         useEffect(() => {
             let fetchedDataArray = []
 
-            fetch("./data.json", { mode: "cors" })
+            fetch("./data.json")
                 .then((resp) => resp.json())
                 .then((resp) => {
                     path.forEach((p) => {

@@ -22,7 +22,7 @@ function ProductDetail({ path }) {
     const [otherProducts, setOtherProducts] = useState([])
 
     useEffect(() => {
-        fetch('./data.json', { mode:'cors' })
+        fetch('./data.json')
         .then((resp) => resp.json())
         .then((resp) => {
             
@@ -63,11 +63,11 @@ function ProductDetail({ path }) {
         })
     }, [path])
     
-    const { xx59, xx99mark1, xx99mark2, yx1, zx7, zx9, increment, decrement } = useStore((state) => ({
+    const { yx1, xx59, xx99mark1, xx99mark2, zx7, zx9, increment, decrement } = useStore((state) => ({
+        yx1: state.products.yx1.quantity,
         xx59: state.products.xx59.quantity,
         xx99mark1: state.products.xx99mark1.quantity,
         xx99mark2: state.products.xx99mark2.quantity,
-        yx1: state.products.yx1.quantity,
         zx7: state.products.zx7.quantity,
         zx9: state.products.zx9.quantity,
         increment: state.increment,
@@ -76,15 +76,15 @@ function ProductDetail({ path }) {
     
     function selectItemStore(selectedSlug){
         switch (selectedSlug) {
+            case 'yx1' :
+                return yx1
             case 'xx59' :
                 return xx59
-                case 'xx99mark1' :
-                    return xx99mark1
-                    case 'xx99mark2' :
-                        return xx99mark2
-                        case 'yx1' :
-                            return yx1
-                            case 'zx7' :
+            case 'xx99mark1' :
+                return xx99mark1
+            case 'xx99mark2' :
+                return xx99mark2
+            case 'zx7' :
                 return zx7
             case 'zx9' :
                 return zx9
