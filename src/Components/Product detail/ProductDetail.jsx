@@ -110,7 +110,8 @@ function ProductDetail({ path }) {
             <Link to="" className='go-back-btn'>Go back</Link>
             <br />
             <div className='product-wrapper'>
-                <img src={getImageSource(productImg, isMobile, isTablet)} alt={`${name} image`}/>
+                <img src={getImageSource(productImg, isMobile, isTablet)} 
+                    alt={`${name} image`}/>
                 <div>
                     {newProduct && <h4>New product</h4>}
                     <h2>{name}</h2>
@@ -150,15 +151,19 @@ function ProductDetail({ path }) {
                 ? tabGallery
                 : deskGallery)
                     .map((path, index) => (
-                        <img key={index} src={path} className={`gallery-img-${index + 1}`} alt={`Gallery Image ${index + 1}`}/>))
-                }
+                        <img key={index} 
+                            src={path} 
+                            className={`gallery-img-${index + 1}`} 
+                            alt={`Gallery Image ${index + 1}`}/>)
+                )}
             </div>
             <div className='other-products-wrapper'>
                 <h3>You may also like</h3> 
                 <div>
                     {otherProducts.map((prod, index) => 
                         (<div className='other-product' key={index}>
-                            <img src={getImageSource(prod, isMobile, isTablet)} alt={prod.slug} />
+                            <img src={getImageSource(prod, isMobile, isTablet)} 
+                                alt={prod.slug} />
                             <h3>{prod.name}</h3>
                             <Link to="">
                                 <button type="button">See product</button>

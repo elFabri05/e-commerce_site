@@ -36,7 +36,7 @@ function App() {
         {/* <Menu /> */}
         {/* <Xx99Mark1 /> */}
         <CartForm />
-        {/* <Cart /> */}
+        <Cart />
         <FooterAnnexe />
         <Footer />
       

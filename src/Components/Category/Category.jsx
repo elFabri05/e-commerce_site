@@ -37,7 +37,10 @@ function Category({path}) {
         <div className='products-wrapper'>
             {catProd.map((prod, index)=> 
                 <div key={index} className='product'>
-                    <img src={isMobile ? prod.imgMobile : (isTablet ? prod.imgTablet : prod.imgDesktop)} alt={prod.prodAltMessage} />
+                    <img src={isMobile ? prod.imgMobile 
+                        : (isTablet ? prod.imgTablet 
+                        : prod.imgDesktop)} 
+                        alt={prod.prodAltMessage} />
                     <div className='product-div'>
                         {prod.newProduct && <h4>New product</h4>}
                         <h2>{prod.prodName}</h2>

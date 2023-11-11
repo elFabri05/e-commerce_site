@@ -21,17 +21,14 @@ function CartForm() {
                 value: state.products.zx9.quantity},
     }))
 
-    console.log(storeItems)
-    const storeItemsString = JSON.stringify(storeItems);
+    const storeItemsString = JSON.stringify(storeItems)
 
     const itemSelection = useMemo(() => {
-        const items = JSON.parse(storeItemsString);
+        const items = JSON.parse(storeItemsString)
         return Object.entries(items)
             .filter(([, item]) => item.value > 0)
-            .map(([key, item]) => ({ ...item, key }));
-    }, [storeItemsString]);
-    console.log(itemSelection)
-
+            .map(([key, item]) => ({ ...item, key }))
+    }, [storeItemsString])
 
     useEffect(()=> {
         fetch('./data.json')
@@ -44,20 +41,20 @@ function CartForm() {
                         itemQuantity : value,
                         itemKey : key,
                     }
-                    })
+                })
                     setDataArray(itemsRender)
             })
             .catch((error) => {
-                console.error('Error fetching data:', error);
+                console.error('Error fetching data:', error)
             })
         },[storeItemsString])
-        console.log(dataArray)
 
     function totalPriceFunc(cart){
         return cart.reduce((total, item) => {
             return total + item.itemPrice*item.itemQuantity
         }, 0)
     }
+        
     const totalPrice = totalPriceFunc(dataArray)
 
     function vatFunc(value){

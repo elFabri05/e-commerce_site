@@ -1,79 +1,107 @@
-import { useState  , useEffect} from "react"
-import { Link , useLocation } from "react-router-dom"
+import { useState , useEffect, useMemo } from "react"
+import { Link } from "react-router-dom"
+import useStore from "../../Store/store"
 import "./Cart.css"
 
-
 function Cart() {
-    // const [cartDispProd, setCartDispProd] = useState([])
-    const [ordProdData, setOrdProdData] = useState([])
-    const [count, setCount] = useState()
-    const { state } = useLocation()   
+    const [dataArray, setDataArray] = useState([])
+    const storeItems = useStore((state) => ({
+        yx1: {id: state.products.yx1.id, 
+                value: state.products.yx1.quantity},
+        xx59: {id: state.products.xx59.id, 
+                value: state.products.xx59.quantity},
+        xx99mark1: {id: state.products.xx99mark1.id, 
+                value: state.products.xx99mark1.quantity},
+        xx99mark2: {id: state.products.xx99mark2.id, 
+                value: state.products.xx99mark2.quantity},
+        zx7: {id: state.products.zx7.id, 
+                value: state.products.zx7.quantity},    
+        zx9: {id: state.products.zx9.id, 
+                value: state.products.zx9.quantity},
+    }))
+    const {increment, decrement, removeAll} = useStore((state) => ({
+        increment: state.increment,
+        decrement: state.decrement,
+        removeAll: state.removeAll,
+    }))
 
-    useEffect(() => {
-        if (!state) {
-            return
-          }
+    const storeItemsString = JSON.stringify(storeItems)
 
-        localStorage.setItem( state.name , JSON.stringify(state) )
-        
-        if (state.count === 0) {
-            localStorage.removeItem(state.name)
-        }
-        
-        const cartProdArray = Object.keys(localStorage).map((key) => {
-             return JSON.parse(localStorage.getItem(key)) })
+    const itemSelection = useMemo(() => {
+        const items = JSON.parse(storeItemsString)
+        return Object.entries(items)
+            .filter(([, item]) => item.value > 0)
+            .map(([key, item]) => ({ ...item, key }))
+    }, [storeItemsString])
 
-             setOrdProdData(cartProdArray)
-    },[state])
-        
-    useEffect(() => {
-        let fetchedDataArray = []
-
-        fetch('./data.json', {mode : "cors"})
-            .then((resp) => resp.json())
-            .then((resp) => {
-                resp.forEach((r) => {
-                    const prodData = {
-                                'cartImage' : r.cartImage,
-                                'prodPrice' : r.price,
-                                'prodName' : r.slug,
-                            }
-                            fetchedDataArray.push(prodData)
-                        })
-                        // setCartDispProd(fetchedDataArray)
+    useEffect(()=> {
+        fetch('./data.json')
+            .then((resp) => resp.json())    
+            .then((data) =>{
+                const itemsRender = itemSelection.map(({id, value, key}) => {
+                    return {
+                        itemImg : data[id].cartImage,
+                        itemPrice : data[id].price,
+                        itemQuantity : value,
+                        itemKey : key,
+                    }
                 })
+                    setDataArray(itemsRender)
+            })
             .catch((error) => {
                 console.error('Error fetching data:', error)
             })
-    },[])
+        },[storeItemsString])
 
-    const removeAll = () => {
-            localStorage.clear()
-            setOrdProdData([])
-        }   
+    function totalItemsFunc(cart){
+        return cart.length
+    }
+
+    const totalItems = totalItemsFunc(dataArray)
+
+    function totalPriceFunc(cart){
+        return cart.reduce((total, item) => {
+            return total + item.itemPrice*item.itemQuantity
+        }, 0)
+    }
+
+    const totalPrice = totalPriceFunc(dataArray)
 
     return(
-        <div className="cart-wrapper">
-            <div>
-                <span>Cart()</span>
-                <button onClick={removeAll}>Remove all</button>
-            </div>
-            <div>
-                {ordProdData.map((prod, index) => (
-                    <div key={index}>
-                    
-                        <div className="counter">
-                            <button className="minus" onClick={() => count > 0 && (count - 1)}>-</button>
-                            <span className="count">{prod.count}</span>
-                            <button className="plus" onClick={() => setCount(count + 1)}>+</button>
+        <div>
+             <div className='cart-wrapper'>
+                <div className="cart-remove-all">
+                    <h3>CART({totalItems})</h3>
+                    <span className='remove-all-span'onClick={removeAll}>Remove all</span>
+                </div>       
+                {dataArray.map((data, index) => 
+                    <div key={data.itemKey + index}className='summary-item'>
+                        <div>
+                            <img src={data.itemImg} alt={data.itemKey} />
+                            <div>
+                                <span>{data.itemKey}</span>
+                                <br />
+                                <span className='grey-font'>$ {data.itemPrice}</span>
+                            </div>
                         </div>
-                    </div>))}
+                        {/* counter from ProductDetail */}
+                        <div className='counter-wrapper'>
+                            <div className="counter">
+                                <button className="minus" onClick={() => decrement(data.itemKey)} disabled={data.itemQuantity === 0}>-</button>
+                                <span className="count">{data.itemQuantity}</span>
+                                <button className="plus" onClick={() => increment(data.itemKey)}>+</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+                <div className='summary-price'>
+                    <span className='grey-font'>TOTAL</span>
+                    <span>$ {totalPrice}</span>
+                </div>
+                <Link to="">
+                    <button className='checkout-button' type="button">CHECKOUT</button>
+                </Link>
             </div>
-            <div>
-                <span>Total</span>
-                <span>Value</span>
-            </div>
-            <Link to="">CHECKOUT</Link>
         </div>
     )
 }
