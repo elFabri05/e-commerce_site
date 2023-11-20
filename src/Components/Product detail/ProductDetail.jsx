@@ -96,14 +96,37 @@ function ProductDetail({ path }) {
     const isMobile = useMediaQuery(374)
     const isTablet = useMediaQuery(767)
     
-    function getImageSource(prod, isMobile, isTablet) {
-        var img = prod.image
-        return isMobile ? img.mobile : isTablet ? img.tablet : img.desktop
-      }
-
     if(!dataLoaded){
         return <div style={{color: '#D87D4A'}}>Loading...</div>
     }
+
+    const galleryElements = (isMobile
+                            ? mobGallery
+                            : isTablet
+                            ? tabGallery
+                            : deskGallery)
+                                .map((path, index) => (
+                                    <img key={index} 
+                                        src={path} 
+                                        className={`gallery-img-${index + 1}`} 
+                                        alt={`Gallery Image ${index + 1}`}/>)
+                            )
+
+    function getImageSource(prod, isMobile, isTablet) {
+        var img = prod.image
+        return isMobile ? img.mobile : isTablet ? img.tablet : img.desktop
+        }
+
+    const otherProductsElements = otherProducts.map((prod, index) => 
+                                    (<div className='other-product' key={index}>
+                                        <img src={getImageSource(prod, isMobile, isTablet)} 
+                                            alt={prod.slug} />
+                                        <h3>{prod.name}</h3>
+                                        <Link to="">
+                                            <button type="button">See product</button>
+                                        </Link>
+                                    </div>)
+                                )
 
     return(      
          <div className='product-component'>
@@ -145,31 +168,12 @@ function ProductDetail({ path }) {
                 </div>
             </div>
             <div className='gallery'>
-                {(isMobile
-                ? mobGallery
-                : isTablet
-                ? tabGallery
-                : deskGallery)
-                    .map((path, index) => (
-                        <img key={index} 
-                            src={path} 
-                            className={`gallery-img-${index + 1}`} 
-                            alt={`Gallery Image ${index + 1}`}/>)
-                )}
+                {galleryElements}
             </div>
             <div className='other-products-wrapper'>
                 <h3>You may also like</h3> 
                 <div>
-                    {otherProducts.map((prod, index) => 
-                        (<div className='other-product' key={index}>
-                            <img src={getImageSource(prod, isMobile, isTablet)} 
-                                alt={prod.slug} />
-                            <h3>{prod.name}</h3>
-                            <Link to="">
-                                <button type="button">See product</button>
-                            </Link>
-                        </div>)
-                    )}
+                    {otherProductsElements}
                 </div>
             </div>
         </div> 

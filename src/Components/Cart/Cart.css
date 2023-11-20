@@ -4,7 +4,6 @@
     margin: 0 auto;
     padding: 1.4rem;
     font-weight: 600;
-    color: #101010;
 }
 
 .cart-remove-all{
@@ -42,4 +41,10 @@
 .cart-wrapper .counter{
     width: 97px;
     font-weight: 400;
+}
+
+@media (min-width:375px){
+    .cart-wrapper{
+        width: 377px;
+    }
 }

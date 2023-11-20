@@ -6,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: .2px solid #f1f1f198 ;
+    color: #ffffff;
     background-color: #171717;
 }
 
@@ -21,19 +22,6 @@
     background-color: #FFFFFF;
     margin: 6px 0;
 }
-
-/* .nav-bar-menu {
-    display: flex;
-    justify-content: space-between;
-    font-size: .8rem;
-    font-weight: 800;
-    list-style: none;
-    margin-left: -1rem;
-}
-
-.nav-bar-menu li{
-    padding: 1rem;
-} */
 
 .nav-bar-menu {
     display: flex;

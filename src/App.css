@@ -4,6 +4,10 @@
 
 body {
     margin: 0;
-    color: #FFFFFF ;
+    color: #101010;
     font-family: 'Manrope', sans-serif;
   }
+
+button:hover{
+  cursor: pointer;
+}

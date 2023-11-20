@@ -255,6 +255,10 @@
         display: block;
     }
 
+    .gallery > img {
+        width: calc(80vw / 2);
+    }
+
     .other-products-wrapper > div{
         max-width: 75%;
     }
@@ -263,5 +267,11 @@
         height: 48px;
         width: 160px;
         font-size: .8rem;
+    }
+}
+
+@media (min-width:1100px) {
+    .product-wrapper img {
+        width: 40vw;
     }
 }

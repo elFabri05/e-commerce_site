@@ -1,4 +1,4 @@
-.cart-form {
+.cart-form-wrapper {
     color: #101010;
     background-color: #fafafa;
     padding-top: 15px;
@@ -9,27 +9,32 @@
     text-decoration: none;
     color: #a5a0a0;
     font-weight: 400;
-    margin-left: 22.5px;
+    margin-top: 2rem;
+    margin-left: 5vw;
 }
 
-.cart-form-wrapper {
+.form-summary{
+    padding: 2rem 0;
+}
+
+.cart-form {
     background-color: #ffffff;
     width: 90%;
     border-radius: 5px;
     margin: 2rem auto;
-    padding: 22.5px;
+    padding: 2rem;
 }
 
-.cart-form-wrapper h5 {
+.cart-form h5 {
     color: #D87D4A;
 }
 
-.cart-form-wrapper label {
+.cart-form label {
     font-size: .75rem;
     font-weight: 700;
 }
 
-.cart-form-wrapper input {
+.cart-form input {
     margin: .4rem 0 .8rem;
     padding: 1rem;
     width: 100%;
@@ -42,12 +47,12 @@
     font-weight: 600;
 }
 
-.cart-form-wrapper .radio-input {
+.cart-form .radio-input {
     width: 10px;
     height: 10px;
 }
 
-.cart-form-wrapper .radio-label {
+.cart-form .radio-label {
     font-size: .9rem;
     padding-left: 1rem;
 }
@@ -55,6 +60,7 @@
 .summary-wrapper {
     background: #ffffff;
     width: 90%;
+    height: 550px;
     margin: 0 auto;
     padding: 1.4rem;
     font-weight: 600;
@@ -63,6 +69,7 @@
 .summary-wrapper img{
     width: 64px;
     height: 64px;
+    border-radius: 5px;
 }
 
 .summary-item{
@@ -87,15 +94,21 @@
     color: #D87D4A;
 }
 
+
+.upper-case{
+    text-transform: uppercase;
+}
+
 .summary-wrapper button{
     border: none;
     background-color: #D87D4A;
     color: #FFFFFF;
     font-weight: 600;
     height: 3.5em;
-    width: 280px;
+    width: 90%;
     letter-spacing: .1rem;
     margin-bottom: 1.5rem;
+    transform: translateX(5%);
 }
 
 .summary-price{
@@ -107,4 +120,22 @@
 .summary-price:nth-last-child(3n),
 .summary-price:last-of-type{
     margin-bottom: 1.5rem;
+}
+
+@media (min-width: 930px) {
+    .form-summary{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-content: start;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .cart-form{
+        margin: 0;
+    }
+
+    .summary-wrapper{
+        margin: 0;
+    }
 }

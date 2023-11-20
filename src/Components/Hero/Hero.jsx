@@ -12,7 +12,8 @@ function Hero() {
     const isTablet = useMediaQuery(767)
 
     return(
-        <div className='hero-container' style={{ backgroundImage:`url(${isMobile ? bgMobImg : (isTablet ? bgTabImg : bgDeskImg)})` }}>
+        <div className='hero-container' style={{ backgroundImage:`url(${isMobile ? bgMobImg 
+                                                                : (isTablet ? bgTabImg : bgDeskImg)})` }}>
             <Navbar />
             <div className='hero'>
                 <h3>NEW PRODUCT</h3>

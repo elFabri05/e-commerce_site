@@ -2,7 +2,7 @@ import { create } from "zustand"
 import { persist, createJSONStorage } from 'zustand/middleware'
 
 const useStore = create(
-  // persist(
+  persist(
   (set) => ({
     products: {
         yx1: { quantity: 3, id: 0},
@@ -40,11 +40,11 @@ const useStore = create(
         }, {}),
     })),
 }),
-// {
-//   name: 'products-store',
-//   storage: createJSONStorage(() => localStorage),
-// }
-// )
+{
+  name: 'products-store',
+  storage: createJSONStorage(() => localStorage),
+}
+)
 )
 
 export default useStore
