@@ -2,13 +2,15 @@
     color:black;
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
 }
 
 .go-back-btn {
-    text-decoration: none;
     color: #a5a0a0;
-    font-weight: 400;
+    font-size: .9rem;
+    font-weight: 500;
+    width: 70px;
+    background: none;
+    border: none;
 }
 
 .features-div{
@@ -190,8 +192,12 @@
         margin-bottom: 10px;
     }
 
-    .product-component h3{
+    .other-products-wrapper h3{
         font-size: 1.7rem;
+    }
+
+    .other-product h3{
+        font-size: 1.4rem;
     }
 
     .gallery{
@@ -233,6 +239,7 @@
         height: auto;
         width: 45vw;
     }
+    
     .product-wrapper > div *{
         margin-bottom: 1rem;
     }

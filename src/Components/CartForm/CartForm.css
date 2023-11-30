@@ -1,7 +1,7 @@
 .cart-form-wrapper {
     color: #101010;
     background-color: #fafafa;
-    padding-top: 15px;
+    /* padding-top: 15px;    */
     padding-bottom: 22.5px;
 }
 
@@ -21,7 +21,7 @@
     background-color: #ffffff;
     width: 90%;
     border-radius: 5px;
-    margin: 2rem auto;
+    margin: 0 auto 2rem;
     padding: 2rem;
 }
 
@@ -60,7 +60,6 @@
 .summary-wrapper {
     background: #ffffff;
     width: 90%;
-    height: 550px;
     margin: 0 auto;
     padding: 1.4rem;
     font-weight: 600;
@@ -137,5 +136,6 @@
 
     .summary-wrapper{
         margin: 0;
-    }
+        align-self: start;    
+}
 }

@@ -1,8 +1,13 @@
 .passed-order{
+    background:#f1f1f1;
     width: 90%;
     margin: 0 auto;
     padding: 2rem;
     border-radius: 5px;
+    position: absolute;
+    z-index: 1000;
+    top: 15vh;
+    right: 5%;
 }
 
 .passed-order h2{
@@ -96,7 +101,7 @@
     color: #FFFFFF;
 }
 
-@media (min-width: 540px) {
+@media (min-width: 600px) {
     .passed-order{
         width: 540px;
     }

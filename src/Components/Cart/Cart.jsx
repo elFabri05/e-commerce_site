@@ -1,14 +1,21 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
 import useStore from "../../Store/store"
-import PropTypes from 'prop-types'
+import { CartContext, StoreContext } from "../../Layout/Layout"
+// import PropTypes from 'prop-types'
+import FadedComponent from "../FadedComponent/FadedComponent"
 import "./Cart.css"
 
-function Cart({dataArray, totalItems, totalPrice}) {
+function Cart() {
+    const {dataArray, totalItems, totalPrice} = useContext(StoreContext)
+    const { toggleCart, isCartOpen } = useContext(CartContext)
     const {increment, decrement, removeAll} = useStore((state) => ({
         increment: state.increment,
         decrement: state.decrement,
         removeAll: state.removeAll,
     }))
+
+    console.log(dataArray)
 
     const cartElements = dataArray.map((data, index) => 
                             <div key={data.itemKey + index}className='summary-item'>
@@ -33,9 +40,10 @@ function Cart({dataArray, totalItems, totalPrice}) {
     
     return(
         <div>
-             <div className='cart-wrapper'>
+            <FadedComponent />
+            <div className='cart-wrapper'>
                 <div className="cart-remove-all">
-                    <h3>CART({totalItems})</h3>
+                    <h3>CART ({totalItems})</h3>
                     <span className='remove-all-span'onClick={removeAll}>Remove all</span>
                 </div>       
                 {cartElements}
@@ -43,18 +51,12 @@ function Cart({dataArray, totalItems, totalPrice}) {
                     <span className='grey-font'>TOTAL</span>
                     <span>$ {totalPrice}</span>
                 </div>
-                <Link to="">
-                    <button className='checkout-button' type="button">CHECKOUT</button>
+                <Link to="cart-form">
+                    <button className='checkout-button' type="button" onClick={toggleCart}>CHECKOUT</button>
                 </Link>
             </div>
         </div>
     )
-}
-
-Cart.propTypes = {
-    dataArray: PropTypes.array.isRequired,
-    totalItems: PropTypes.number.isRequired,
-    totalPrice: PropTypes.number.isRequired,
 }
 
 export default Cart

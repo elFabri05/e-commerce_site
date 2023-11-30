@@ -18,23 +18,33 @@ function Home() {
     const isMobile = useMediaQuery(374)
     const isTablet = useMediaQuery(767)
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+        }
+
     return(
         <div className='home'>
             <div className='zx9-speaker' style={{ backgroundImage:`url(${patternCircles})` }}>
-                <img src={isMobile ? zx9SpeaImgMob : ( isTablet ? zx9SpeaImgTab : zx9SpeaImgDesk)} className='zx9-speaker-img' alt="ZX9 speaker mobile image" />
+                <img src={isMobile ? zx9SpeaImgMob : ( isTablet ? zx9SpeaImgTab : zx9SpeaImgDesk)} 
+                    className='zx9-speaker-img' alt="ZX9 speaker mobile image" />
                 <h2>ZX9 SPEAKER</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <Link to=''>SEE PRODUCT</Link>
+                    <Link to='/speakers/zx9' onClick={scrollToTop}>SEE PRODUCT</Link>
             </div>
-            <div className='zx7-speaker' style={{ backgroundImage:`url(${isMobile ? zx7SpeaImgMob : (isTablet ? zx7SpeaImgTab : zx7SpeaImgDesk)})` }}>
+            <div className='zx7-speaker' style={{ backgroundImage:`url(${isMobile ? zx7SpeaImgMob 
+                : (isTablet ? zx7SpeaImgTab : zx7SpeaImgDesk)})` }}>
                 <h2>ZX7 SPEAKER</h2>
-                    <Link to=''>SEE PRODUCT</Link>
+                    <Link to='/speakers/zx7' onClick={scrollToTop}>SEE PRODUCT</Link>
             </div>
             <div className='yx1-earphones' >
-                <img src={isMobile ? yx1EarImgMob : (isTablet ? yx1EarImgTab : yx1EarImgDesk)} className='yx1-earphones-img' alt="YX1 earphones mobile image" />
+                <img src={isMobile ? yx1EarImgMob : (isTablet ? yx1EarImgTab : yx1EarImgDesk)} 
+                    className='yx1-earphones-img' alt="YX1 earphones mobile image" />
                 <div>
                     <h2>YX1 EARPHONES</h2>
-                        <Link to=''>SEE PRODUCT</Link>
+                        <Link to='/earphones/yx1' onClick={scrollToTop}>SEE PRODUCT</Link>
                 </div>
             </div>
         </div>

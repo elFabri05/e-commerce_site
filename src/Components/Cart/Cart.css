@@ -1,9 +1,12 @@
 .cart-wrapper{
     background: #ffffff;
     width: 90%;
-    margin: 0 auto;
+    margin-left: 5%;
     padding: 1.4rem;
     font-weight: 600;
+    position:absolute;
+    top: 100px;
+    z-index: 1000;
 }
 
 .cart-remove-all{
@@ -33,7 +36,7 @@
     color: #FFFFFF;
     font-weight: 600;
     height: 3.5em;
-    width: 280px;
+    width: 100%;
     letter-spacing: .1rem;
     margin-bottom: 1.5rem;
 }
@@ -43,8 +46,9 @@
     font-weight: 400;
 }
 
-@media (min-width:375px){
+@media (min-width:420px){
     .cart-wrapper{
         width: 377px;
+        right: 5%;
     }
 }

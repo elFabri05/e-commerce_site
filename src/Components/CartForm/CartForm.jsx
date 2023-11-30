@@ -1,10 +1,15 @@
-import { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { StoreContext } from "../../Layout/Layout"
+import { useNavigate } from 'react-router-dom'
 import './CartForm.css'
+import PassedOrder from '../PassedOrder/PassedOrder'
 
-function CartForm({dataArray, totalPrice}) {
+function CartForm() {
     const [inputs, setInputs] = useState({})
+    const [passedOrder, setPassedOrder] = useState(false)
+    const {dataArray, totalItems, totalPrice} = useContext(StoreContext)
+
+    const navigate = useNavigate()
 
     function vatFunc(value){
         return value*20/100
@@ -48,9 +53,21 @@ function CartForm({dataArray, totalPrice}) {
                                     </div>
                                 )
 
+        const NavScrollToTop = () => {
+            navigate(-1)
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+            }
+
+    const togglePassedOrder = ()=> {
+        setPassedOrder(!passedOrder)
+    }
     return(
         <div className='cart-form-wrapper'>
-            <Link to="" className='go-back-btn'>Go back</Link>
+            <button className='go-back-btn' onClick={NavScrollToTop}>Go back</button>
             <br />
             <div className='form-summary'>
                 <div className='cart-form'>
@@ -64,6 +81,7 @@ function CartForm({dataArray, totalPrice}) {
                             placeholder="Alexei Weird"
                             value={inputs.name}
                             onChange={handleChange}
+                            required
                             />
                         </label>
                         <br />
@@ -74,6 +92,7 @@ function CartForm({dataArray, totalPrice}) {
                             placeholder="alexeiweird@gmail.com"
                             value={inputs.email}
                             onChange={handleChange}
+                            required
                             />
                         </label>
                         <br />
@@ -84,6 +103,7 @@ function CartForm({dataArray, totalPrice}) {
                             placeholder="+1 202-555-0136"
                             value={inputs.phoneNumber}
                             onChange={handleChange}
+                            required
                             />
                         </label>
                         <h5>SHIPPING INFO</h5>
@@ -94,6 +114,7 @@ function CartForm({dataArray, totalPrice}) {
                             placeholder="1137 Williams Avenue"
                             value={inputs.address}
                             onChange={handleChange}
+                            required
                             />
                         </label>
                         <br />
@@ -104,6 +125,7 @@ function CartForm({dataArray, totalPrice}) {
                             placeholder="10001"
                             value={inputs.zipCode}
                             onChange={handleChange}
+                            required
                             />
                         </label>
                         <br />
@@ -114,6 +136,7 @@ function CartForm({dataArray, totalPrice}) {
                             placeholder="New York"
                             value={inputs.city}
                             onChange={handleChange}
+                            required
                             />
                         </label>
                         <br />
@@ -124,6 +147,7 @@ function CartForm({dataArray, totalPrice}) {
                             placeholder="United States"
                             value={inputs.country}
                             onChange={handleChange}
+                            required
                             />
                         </label>
                         <h5>Payment Method</h5>
@@ -132,6 +156,7 @@ function CartForm({dataArray, totalPrice}) {
                                 type="radio" 
                                 id="eMoney"
                                 name="paymentMethod"
+                                required
                             />
                             <label className='radio-label' htmlFor="eMoney">e-Money</label>
                         </div>
@@ -140,6 +165,7 @@ function CartForm({dataArray, totalPrice}) {
                                 type="radio" 
                                 id="cash"
                                 name="paymentMethod"
+                                required
                             />
                             <label className='radio-label' htmlFor="cash">Cash on Delivery</label>
                         </div>
@@ -164,19 +190,13 @@ function CartForm({dataArray, totalPrice}) {
                         <span className='grey-font'>GRAND TOTAL</span>
                         <span className='orange-font'>$ {grandTotal}</span>
                     </div>
-                    <Link to="">
-                        <button type="button">CONTINUE & PAY</button>
-                    </Link>
+                    <button type="button" onClick={togglePassedOrder}>CONTINUE & PAY</button>
                 </div>
 
             </div>
+            {passedOrder && <PassedOrder />}
         </div>
     )
-}
-
-CartForm.propTypes = {
-    dataArray: PropTypes.array.isRequired,
-    totalPrice: PropTypes.number.isRequired,
 }
 
 export default CartForm

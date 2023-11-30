@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState, useContext } from 'react'
+import { Link , useNavigate} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import useMediaQuery from '../../Hooks/useMediaQuery'
-import './ProductDetail.css'
+import { CartContext } from '../../Layout/Layout'
 import useStore from '../../Store/store'
+import './ProductDetail.css'
 
 function ProductDetail({ path }) {
     
@@ -21,11 +22,14 @@ function ProductDetail({ path }) {
     const [deskGallery, setDeskGallery] = useState([])
     const [otherProducts, setOtherProducts] = useState([])
 
+    const {isCartOpen, toggleCart} = useContext(CartContext)
+
+    const navigate = useNavigate()
+
     useEffect(() => {
-        fetch('./data.json')
+        fetch('/data.json')
         .then((resp) => resp.json())
         .then((resp) => {
-            
             setSlug(resp[path].slug)
             setProductImg(resp[path])
             setNewProduct(resp[path].new)
@@ -115,22 +119,32 @@ function ProductDetail({ path }) {
     function getImageSource(prod, isMobile, isTablet) {
         var img = prod.image
         return isMobile ? img.mobile : isTablet ? img.tablet : img.desktop
+    }
+    
+    const otherProductsElements = otherProducts.map((prod, index) => {
+                    const prodPath = `/${prod.category}/${prod.slug}`
+                    return    (<div className='other-product' key={index}>
+                            <img src={getImageSource(prod, isMobile, isTablet)} 
+                                alt={prod.slug} />
+                            <h3>{prod.name}</h3>
+                            <Link to={prodPath}>
+                                <button type="button">See product</button>
+                            </Link>
+                        </div>)
+    
+    })
+    
+    const NavScrollToTop = () => {
+        navigate(-1)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
         }
-
-    const otherProductsElements = otherProducts.map((prod, index) => 
-                                    (<div className='other-product' key={index}>
-                                        <img src={getImageSource(prod, isMobile, isTablet)} 
-                                            alt={prod.slug} />
-                                        <h3>{prod.name}</h3>
-                                        <Link to="">
-                                            <button type="button">See product</button>
-                                        </Link>
-                                    </div>)
-                                )
 
     return(      
          <div className='product-component'>
-            <Link to="" className='go-back-btn'>Go back</Link>
+            <button className='go-back-btn' onClick={NavScrollToTop}>Go back</button>
             <br />
             <div className='product-wrapper'>
                 <img src={getImageSource(productImg, isMobile, isTablet)} 
@@ -147,9 +161,7 @@ function ProductDetail({ path }) {
                             <span className="count">{itemStore}</span>
                             <button className="plus" onClick={() => increment(slug)}>+</button>
                         </div>
-                        <Link to=''>
-                            <button className='add-to-cart' type='button'>Add to cart</button>
-                        </Link>
+                            <button className='add-to-cart' type='button' onClick={toggleCart}>Add to cart</button>
                     </div>
                 </div>
             </div>

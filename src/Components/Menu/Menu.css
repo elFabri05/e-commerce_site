@@ -1,7 +1,18 @@
+.faded-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99; 
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 100;
     flex: 1 2;
     margin-bottom: 3.5rem;
 }
@@ -45,6 +56,7 @@
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
+        flex-grow: 1;
         width: 87%;
         margin: 0 auto 3.5rem;
     }
@@ -60,7 +72,6 @@
 }
 
 @media (min-width:768px){
-
     .option-div {
         width: 223px;
         height: 165px;

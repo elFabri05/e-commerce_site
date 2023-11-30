@@ -21,10 +21,11 @@ function Category({path}) {
                             'imgMobile' : resp[p].categoryImage.mobile,
                             'imgTablet' : resp[p].categoryImage.tablet,
                             'imgDesktop' : resp[p].categoryImage.desktop,
-                            'prodAltMessage' : resp[p].slug,
+                            'slug' : resp[p].slug,
                             'newProduct' : resp[p].new,
                             'prodName' : resp[p].name,
-                            'prodDescription' : resp[p].description, 
+                            'prodDescription' : resp[p].description,
+                            'category' : resp[p].category, 
                         }
                         fetchedDataArray.push(catProdData)
                     })
@@ -33,24 +34,33 @@ function Category({path}) {
                 .catch((error) => console.error(error))
           }, [path])
 
+          const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+            }
+
     return (
         <div className='products-wrapper'>
-            {catProd.map((prod, index)=> 
-                <div key={index} className='product'>
+            {catProd.map((prod, index)=> {
+                const prodPath = `/${prod.category}/${prod.slug}`
+                
+                return (<div key={index} className='product'>
                     <img src={isMobile ? prod.imgMobile 
                         : (isTablet ? prod.imgTablet 
                         : prod.imgDesktop)} 
-                        alt={prod.prodAltMessage} />
+                        alt={prod.slug}/>
                     <div className='product-div'>
                         {prod.newProduct && <h4>New product</h4>}
                         <h2>{prod.prodName}</h2>
                         <p>{prod.prodDescription}</p>
-                        <Link to='#'>
+                        <Link to={prodPath} onClick={scrollToTop}>
                             <button type="button">See product</button>
                         </Link>
                     </div>
-                </div>
-            )}
+                </div>)
+            })}
         </div>
     )
 }

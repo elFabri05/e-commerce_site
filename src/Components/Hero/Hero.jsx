@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar'
 import './Hero.css'
 import useMediaQuery from '../../Hooks/useMediaQuery'
 import bgMobImg from '../../../src/resources/home/mobile/image-header.jpg'
@@ -14,13 +13,12 @@ function Hero() {
     return(
         <div className='hero-container' style={{ backgroundImage:`url(${isMobile ? bgMobImg 
                                                                 : (isTablet ? bgTabImg : bgDeskImg)})` }}>
-            <Navbar />
             <div className='hero'>
                 <h3>NEW PRODUCT</h3>
                 <h1>XX99 MARK II HEADPHONES</h1>
                 <p>Experience natural, life like audio and exceptional build quality made 
                     for the passionate music enthusiast.</p>
-                    <Link to='#'>
+                    <Link to='/headphones/xx99mark2'>
                         <button type="button">See product</button>
                     </Link>
             
