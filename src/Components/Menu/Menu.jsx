@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './Menu.css'
-import headphonesImg from '../../../src/resources/image-category-thumbnail-headphones.png'
-import speakerImg from '../../../src/resources/image-category-thumbnail-speakers.png'
-import earphonesImg from '../../../src/resources/image-category-thumbnail-earphones.png'
+import headphonesImg from '../../../public/assets/image-category-thumbnail-headphones.png'
+import speakerImg from '../../../public/assets/image-category-thumbnail-speakers.png'
+import earphonesImg from '../../../public/assets/image-category-thumbnail-earphones.png'
 
 function Menu({ toggleMenu }) {
 

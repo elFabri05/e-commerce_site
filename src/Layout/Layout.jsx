@@ -43,7 +43,7 @@ function Layout(){
     }, [storeItemsString])
 
     useEffect(()=> {
-        fetch('./data.json')
+        fetch('../data.json')
             .then((resp) => resp.json())    
             .then((data) =>{
                 const itemsRender = itemSelection.map(({id, value, key}) => {
@@ -60,12 +60,6 @@ function Layout(){
                 console.error('Error fetching data:', error)
             })
         },[storeItemsString])
-console.log(dataArray)
-    function totalItemsFunc(cart){
-        return cart.length
-    }
-
-    const totalItems = totalItemsFunc(dataArray)
 
     function totalPriceFunc(cart){
         return cart.reduce((total, item) => {
@@ -75,13 +69,10 @@ console.log(dataArray)
 
     const totalPrice = totalPriceFunc(dataArray)
 
-    // <CartForm dataArray={dataArray} totalPrice={totalPrice}/>
-    // <Cart />
-    // <PassedOrder dataArray={dataArray} totalItems={totalItems} totalPrice={totalPrice}/>
     return(
-        <StoreContext.Provider value={{dataArray, totalItems, totalPrice}}>
-            <CartContext.Provider value={{ isCartOpen, toggleCart }}>
-                <Navbar/>
+        <StoreContext.Provider value={{dataArray, totalPrice}}>
+            <CartContext.Provider value={{ toggleCart }}>
+                <Navbar isCartOpen={isCartOpen}/>
                 <Outlet/>
                 <FooterAnnexe />
                 <Footer />

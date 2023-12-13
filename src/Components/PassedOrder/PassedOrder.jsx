@@ -2,11 +2,17 @@ import { useContext } from "react"
 import { StoreContext } from "../../Layout/Layout"
 import { Link } from 'react-router-dom'
 import FadedComponent from "../FadedComponent/FadedComponent"
-import iconOrderConf from '../../../src/resources/home/checkout/icon-order-confirmation.svg'
+import iconOrderConf from '../../../public/assets/home/checkout/icon-order-confirmation.svg'
 import './PassedOrder.css'
 
 function PassedOrder() {
-    const {dataArray, totalItems, totalPrice} = useContext(StoreContext)
+    const {dataArray, totalPrice} = useContext(StoreContext)
+
+    function totalItemsFunc(cart){
+        return cart.length
+    }
+
+    const totalItems = totalItemsFunc(dataArray)
 
     const remainingItems = totalItems - 1
     const {itemImg, itemKey, itemPrice, itemQuantity} = Object.assign({}, dataArray[0])

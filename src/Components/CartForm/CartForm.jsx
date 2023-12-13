@@ -7,7 +7,7 @@ import PassedOrder from '../PassedOrder/PassedOrder'
 function CartForm() {
     const [inputs, setInputs] = useState({})
     const [passedOrder, setPassedOrder] = useState(false)
-    const {dataArray, totalItems, totalPrice} = useContext(StoreContext)
+    const {dataArray, totalPrice} = useContext(StoreContext)
 
     const navigate = useNavigate()
 
@@ -192,7 +192,6 @@ function CartForm() {
                     </div>
                     <button type="button" onClick={togglePassedOrder}>CONTINUE & PAY</button>
                 </div>
-
             </div>
             {passedOrder && <PassedOrder />}
         </div>

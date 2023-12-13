@@ -2,20 +2,23 @@ import { useContext } from "react"
 import { Link } from "react-router-dom"
 import useStore from "../../Store/store"
 import { CartContext, StoreContext } from "../../Layout/Layout"
-// import PropTypes from 'prop-types'
 import FadedComponent from "../FadedComponent/FadedComponent"
 import "./Cart.css"
 
 function Cart() {
-    const {dataArray, totalItems, totalPrice} = useContext(StoreContext)
-    const { toggleCart, isCartOpen } = useContext(CartContext)
+    const {dataArray, totalPrice} = useContext(StoreContext)
+    const { toggleCart } = useContext(CartContext)
     const {increment, decrement, removeAll} = useStore((state) => ({
         increment: state.increment,
         decrement: state.decrement,
         removeAll: state.removeAll,
     }))
 
-    console.log(dataArray)
+    function totalItemsFunc(cart){
+        return cart.length
+    }
+
+    const totalItems = totalItemsFunc(dataArray)
 
     const cartElements = dataArray.map((data, index) => 
                             <div key={data.itemKey + index}className='summary-item'>
@@ -42,9 +45,13 @@ function Cart() {
         <div>
             <FadedComponent />
             <div className='cart-wrapper'>
-                <div className="cart-remove-all">
+                <div className="cart-options">
                     <h3>CART ({totalItems})</h3>
-                    <span className='remove-all-span'onClick={removeAll}>Remove all</span>
+                    <div>
+                        <span className='remove-all-span' onClick={removeAll}>Remove all</span>
+                        <br />
+                        <span className="continue-shopping-span" onClick={toggleCart}>Continue shopping</span>
+                    </div>
                 </div>       
                 {cartElements}
                 <div className='summary-price'>

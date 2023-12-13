@@ -1,4 +1,3 @@
-// import { useState , useEffect, useMemo } from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 
 import Layout from './Layout/Layout'
@@ -15,13 +14,8 @@ import Zx9 from './Components/ProductDetail/Zx9/Zx9'
 import Zx7 from './Components/ProductDetail/Zx7/Zx7'
 import Yx1 from './Components/ProductDetail/Yx1/Yx1'
 
-// import Menu from './Components/Menu/Menu'
-// import CartForm from './Components/CartForm/CartForm'
-// import Cart from './Components/Cart/Cart'
-// import PassedOrder  from './Components/PassedOrder/PassedOrder'
-
-import './App.css'
 import CartForm from './Components/CartForm/CartForm'
+import './App.css'
 
 function App() {
 

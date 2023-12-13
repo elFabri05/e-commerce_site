@@ -9,19 +9,25 @@
     z-index: 1000;
 }
 
-.cart-remove-all{
+.cart-options{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.remove-all-span{
+.remove-all-span,
+.continue-shopping-span{
     color: #a5a0a0;
     text-decoration: underline;
     font-weight: 500;
 }
 
-.remove-all-span:hover{
+.continue-shopping-span{
+    color: #D87D4A;
+}
+
+.remove-all-span:hover,
+.continue-shopping-span:hover{
     cursor: pointer;
 }
 

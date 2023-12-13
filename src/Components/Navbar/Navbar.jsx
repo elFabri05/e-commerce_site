@@ -1,17 +1,18 @@
 import { useState , useContext } from 'react'
 import { Link , useLocation } from 'react-router-dom'
 import { CartContext} from '../../Layout/Layout'
+import PropTypes from 'prop-types'
 import Menu from '../Menu/Menu'
 import FadedComponent from '../FadedComponent/FadedComponent'
 import Cart from '../Cart/Cart'
 
 import useMediaQuery from '../../Hooks/useMediaQuery'
 import './Navbar.css'
-import cartSvg from '../../../src/resources/icon-cart.svg'
+import cartSvg from '../../../public/assets/icon-cart.svg'
 
-function Navbar(){      
+function Navbar({isCartOpen }){      
     const [menuIsOpen, setMenuIsOpen] = useState(false)
-    const { toggleCart, isCartOpen } = useContext(CartContext)
+    const { toggleCart} = useContext(CartContext)
 
     const location = useLocation()
     const isTablet = useMediaQuery(767)
@@ -61,10 +62,9 @@ function Navbar(){
         </nav>
     )
 }
-// 
-// Navbar.propTypes = {
-//     cartIsOpen: PropTypes.bool.isRequired,
-//     toggleCart: PropTypes.func.isRequired,
-// }
+
+Navbar.propTypes = {
+    isCartOpen: PropTypes.bool.isRequired,
+}
 
 export default Navbar

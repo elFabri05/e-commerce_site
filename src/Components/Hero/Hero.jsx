@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
 import './Hero.css'
 import useMediaQuery from '../../Hooks/useMediaQuery'
-import bgMobImg from '../../../src/resources/home/mobile/image-header.jpg'
-import bgTabImg from '../../../src/resources/home/tablet/image-header.jpg'
-import bgDeskImg from '../../../src/resources/home/desktop/image-hero.jpg'
-
+import bgMobImg from '../../../public/assets/home/mobile/image-header.jpg'
+import bgTabImg from '../../../public/assets/home/tablet/image-header.jpg'
+import bgDeskImg from '../../../public/assets/home/desktop/image-hero.jpg'
 
 function Hero() {
     const isMobile = useMediaQuery(374)
