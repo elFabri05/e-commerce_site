@@ -1,7 +1,7 @@
 import './FooterAnnexe.css'
 import useMediaQuery from '../../Hooks/useMediaQuery'
-import bestgearImg from '../../../public/assets/image-best-gear.jpg'
-import bestgearImgTablet from '../../../public/assets/image-best-gear-tablet.jpg'
+import bestgearImg from '/assets/image-best-gear.jpg'
+import bestgearImgTablet from '/assets/image-best-gear-tablet.jpg'
 
 
 function FooterAnnexe() {

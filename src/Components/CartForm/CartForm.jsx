@@ -78,7 +78,7 @@ function CartForm() {
                             <input 
                             type="text" 
                             name="name"
-                            placeholder="Alexei Weird"
+                            placeholder="Full name"
                             value={inputs.name}
                             onChange={handleChange}
                             required
@@ -89,7 +89,7 @@ function CartForm() {
                             <input 
                             type="email" 
                             name="email"
-                            placeholder="alexeiweird@gmail.com"
+                            placeholder="Your email address"
                             value={inputs.email}
                             onChange={handleChange}
                             required
@@ -100,7 +100,7 @@ function CartForm() {
                             <input 
                             type="text" 
                             name="phoneNumber"
-                            placeholder="+1 202-555-0136"
+                            placeholder="Phone number"
                             value={inputs.phoneNumber}
                             onChange={handleChange}
                             required
@@ -111,7 +111,7 @@ function CartForm() {
                             <input 
                             type="text" 
                             name="address"
-                            placeholder="1137 Williams Avenue"
+                            placeholder="Your address"
                             value={inputs.address}
                             onChange={handleChange}
                             required
@@ -122,7 +122,7 @@ function CartForm() {
                             <input 
                             type="text" 
                             name="zipCode"
-                            placeholder="10001"
+                            placeholder="Zip Code"
                             value={inputs.zipCode}
                             onChange={handleChange}
                             required
@@ -133,7 +133,7 @@ function CartForm() {
                             <input 
                             type="text" 
                             name="city"
-                            placeholder="New York"
+                            placeholder="City"
                             value={inputs.city}
                             onChange={handleChange}
                             required
@@ -144,7 +144,7 @@ function CartForm() {
                             <input 
                             type="text" 
                             name="country"
-                            placeholder="United States"
+                            placeholder="Country"
                             value={inputs.country}
                             onChange={handleChange}
                             required

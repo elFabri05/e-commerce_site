@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 import useMediaQuery from '../../Hooks/useMediaQuery'
-import yx1EarImgMob from '../../../public/assets/home/mobile/image-earphones-yx1.jpg'
-import zx7SpeaImgMob from '../../../public/assets/home/mobile/image-speaker-zx7.jpg'
-import zx9SpeaImgMob from '../../../public/assets/home/mobile/image-speaker-zx9.png'
-import yx1EarImgDesk from '../../../public/assets/home/desktop/image-earphones-yx1.jpg'
-import zx7SpeaImgDesk from '../../../public/assets/home/desktop/image-speaker-zx7.jpg'
-import zx9SpeaImgDesk from '../../../public/assets/home/desktop/image-speaker-zx9.png'
-import yx1EarImgTab from '../../../public/assets/home/tablet/image-earphones-yx1.jpg'
-import zx7SpeaImgTab from '../../../public/assets/home/tablet/image-speaker-zx7.jpg'
-import zx9SpeaImgTab from '../../../public/assets/home/tablet/image-speaker-zx9.png'
+import yx1EarImgMob from '/assets/home/mobile/image-earphones-yx1.jpg'
+import zx7SpeaImgMob from '/assets/home/mobile/image-speaker-zx7.jpg'
+import zx9SpeaImgMob from '/assets/home/mobile/image-speaker-zx9.png'
+import yx1EarImgDesk from '/assets/home/desktop/image-earphones-yx1.jpg'
+import zx7SpeaImgDesk from '/assets/home/desktop/image-speaker-zx7.jpg'
+import zx9SpeaImgDesk from '/assets/home/desktop/image-speaker-zx9.png'
+import yx1EarImgTab from '/assets/home/tablet/image-earphones-yx1.jpg'
+import zx7SpeaImgTab from '/assets/home/tablet/image-speaker-zx7.jpg'
+import zx9SpeaImgTab from '/assets/home/tablet/image-speaker-zx9.png'
 
-import patternCircles from '../../../public/assets/home/pattern-circles.svg'
+import patternCircles from '/assets/home/pattern-circles.svg'
 
 function Home() {
 

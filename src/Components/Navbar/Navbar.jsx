@@ -8,7 +8,7 @@ import Cart from '../Cart/Cart'
 
 import useMediaQuery from '../../Hooks/useMediaQuery'
 import './Navbar.css'
-import cartSvg from '../../../public/assets/icon-cart.svg'
+import cartSvg from '/assets/icon-cart.svg'
 
 function Navbar({isCartOpen }){      
     const [menuIsOpen, setMenuIsOpen] = useState(false)

@@ -22,7 +22,7 @@ function ProductDetail({ path }) {
     const [deskGallery, setDeskGallery] = useState([])
     const [otherProducts, setOtherProducts] = useState([])
 
-    const {isCartOpen, toggleCart} = useContext(CartContext)
+    const { toggleCart} = useContext(CartContext)
 
     const navigate = useNavigate()
 

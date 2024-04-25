@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import faceSvg from '../../../public/assets/icon-facebook.svg'
-import instaSvg from '../../../public/assets/icon-instagram.svg'
-import twitterSvg from '../../../public/assets/icon-twitter.svg'
+import faceSvg from '/assets/icon-facebook.svg'
+import instaSvg from '/assets/icon-instagram.svg'
+import twitterSvg from '/assets/icon-twitter.svg'
 import './Footer.css'
 
 function Footer() {

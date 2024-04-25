@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { StoreContext } from "../../Layout/Layout"
 import { Link } from 'react-router-dom'
 import FadedComponent from "../FadedComponent/FadedComponent"
-import iconOrderConf from '../../../public/assets/home/checkout/icon-order-confirmation.svg'
+import iconOrderConf from '/assets/home/checkout/icon-order-confirmation.svg'
 import './PassedOrder.css'
 
 function PassedOrder() {
@@ -14,7 +14,6 @@ function PassedOrder() {
 
     const totalItems = totalItemsFunc(dataArray)
 
-    const remainingItems = totalItems - 1
     const {itemImg, itemKey, itemPrice, itemQuantity} = Object.assign({}, dataArray[0])
 
     return(
@@ -37,7 +36,7 @@ function PassedOrder() {
                             </div>
                             <span className='grey-font'> X {itemQuantity}</span>
                         </div>
-                        <p className='grey-font'>and {remainingItems} other item(s)</p>                 
+                        <p className='grey-font'>and {totalItems} other item(s)</p>                 
                     </div>  
                     <div className='grand-total'>
                         <h3>GRAND TOTAL</h3>
