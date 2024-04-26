@@ -43,7 +43,7 @@ function Layout(){
     }, [storeItemsString])
 
     useEffect(()=> {
-        fetch('../data.json')
+        fetch('./data.json')
             .then((resp) => resp.json())    
             .then((data) =>{
                 const itemsRender = itemSelection.map(({id, value, key}) => {

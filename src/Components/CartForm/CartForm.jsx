@@ -64,7 +64,9 @@ function CartForm() {
 
     const togglePassedOrder = ()=> {
         setPassedOrder(!passedOrder)
+        NavScrollToTop()
     }
+    
     return(
         <div className='cart-form-wrapper'>
             <button className='go-back-btn' onClick={NavScrollToTop}>Go back</button>
