@@ -26,11 +26,11 @@ function Navbar({isCartOpen }){
     }
 
     const openMenu = <div>
-                        <FadedComponent />
+                        <FadedComponent height={true}/>
                         <div style={{display:'block' , 
                             position: 'absolute', 
                             zIndex: 1000, 
-                            borderRadius: '5px', 
+                            borderRadius: '5px',    
                             background: 'white', 
                             width: '100vw'}}>
                             <Menu toggleMenu={toggleMenu}/>

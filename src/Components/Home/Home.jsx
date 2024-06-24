@@ -19,10 +19,10 @@ function Home() {
     const isTablet = useMediaQuery(767)
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
         }
 
     return(

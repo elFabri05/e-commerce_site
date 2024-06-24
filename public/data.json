@@ -60,7 +60,8 @@
     },
     "others": [
       {
-        "slug": "xx99",
+        "slug": "xx99mark1",
+        "category": "headphones",
         "name": "XX99 Mark I",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
@@ -70,6 +71,7 @@
       },
       {
         "slug": "xx59",
+        "category": "headphones",
         "name": "XX59",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx59-headphones.jpg",
@@ -79,7 +81,8 @@
       },
       {
         "slug": "zx9",
-        "name": "ZX9 Speaker",
+        "category": "speakers",
+        "name": "ZX9",
         "image": {
           "mobile": "/assets/shared/mobile/image-zx9-speaker.jpg",
           "tablet": "/assets/shared/tablet/image-zx9-speaker.jpg",
@@ -145,7 +148,8 @@
     },
     "others": [
       {
-        "slug": "xx99",
+        "slug": "xx99mark2",
+        "category": "headphones",
         "name": "XX99 Mark II",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx99-mark-two-headphones.jpg",
@@ -154,7 +158,8 @@
         }
       },
       {
-        "slug": "xx99",
+        "slug": "xx99mark1",
+        "category": "headphones",
         "name": "XX99 Mark I",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
@@ -164,6 +169,7 @@
       },
       {
         "slug": "zx9",
+        "category": "speakers",
         "name": "ZX9 Speaker",
         "image": {
           "mobile": "/assets/shared/mobile/image-zx9-speaker.jpg",
@@ -230,7 +236,8 @@
     },
     "others": [
       {
-        "slug": "xx99",
+        "slug": "xx99mark2",
+        "category":"headphones",
         "name": "XX99 Mark II",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx99-mark-two-headphones.jpg",
@@ -240,6 +247,7 @@
       },
       {
         "slug": "xx59",
+        "category": "headphones",
         "name": "XX59",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx59-headphones.jpg",
@@ -249,6 +257,7 @@
       },
       {
         "slug": "zx9",
+        "category":"speakers",
         "name": "ZX9 Speaker",
         "image": {
           "mobile": "/assets/shared/mobile/image-zx9-speaker.jpg",
@@ -319,7 +328,8 @@
     },
     "others": [
       {
-        "slug": "xx99",
+        "slug": "xx99mark1",
+        "category":"headphones",
         "name": "XX99 Mark I",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
@@ -329,6 +339,7 @@
       },
       {
         "slug": "xx59",
+        "category":"headphones",
         "name": "XX59",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx59-headphones.jpg",
@@ -338,6 +349,7 @@
       },
       {
         "slug": "zx9",
+        "category":"speakers",
         "name": "ZX9 Speaker",
         "image": {
           "mobile": "/assets/shared/mobile/image-zx9-speaker.jpg",
@@ -409,6 +421,7 @@
     "others": [
       {
         "slug": "zx9",
+        "category":"speakers",
         "name": "ZX9 Speaker",
         "image": {
           "mobile": "/assets/shared/mobile/image-zx9-speaker.jpg",
@@ -417,7 +430,8 @@
         }
       },
       {
-        "slug": "xx99",
+        "slug": "xx99mark1",
+        "category":"headphones",
         "name": "XX99 Mark I",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
@@ -427,6 +441,7 @@
       },
       {
         "slug": "xx59",
+        "category":"headphones",
         "name": "XX59",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx59-headphones.jpg",
@@ -498,6 +513,7 @@
     "others": [
       {
         "slug": "zx7",
+        "category": "speakers",
         "name": "ZX7 Speaker",
         "image": {
           "mobile": "/assets/shared/mobile/image-zx7-speaker.jpg",
@@ -506,7 +522,8 @@
         }
       },
       {
-        "slug": "xx99",
+        "slug": "xx99mark1",
+        "category": "headphones",
         "name": "XX99 Mark I",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
@@ -516,6 +533,7 @@
       },
       {
         "slug": "xx59",
+        "category": "headphones",
         "name": "XX59",
         "image": {
           "mobile": "/assets/shared/mobile/image-xx59-headphones.jpg",

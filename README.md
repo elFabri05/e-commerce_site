@@ -2,4 +2,4 @@
 
 practice e commerce site
 
-https://audiophile-elfabri.netlify.app/
+https://audiophile-e-commerce-six.vercel.app/

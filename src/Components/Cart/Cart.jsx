@@ -59,7 +59,7 @@ function Cart() {
                     <span>$ {totalPrice}</span>
                 </div>
                 <Link to="cart-form">
-                    <button className='checkout-button' type="button" onClick={toggleCart}>CHECKOUT</button>
+                    <button className='checkout-button' type="button" onClick={toggleCart} disabled={dataArray.length === 0}>CHECKOUT</button>
                 </Link>
             </div>
         </div>

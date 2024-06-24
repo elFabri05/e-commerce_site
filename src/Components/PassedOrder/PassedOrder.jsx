@@ -18,7 +18,7 @@ function PassedOrder() {
 
     return(
         <div>
-            <FadedComponent/>
+            <FadedComponent height={false}/>
             <div className='passed-order'>
                 <img src={iconOrderConf} alt="Icon order confirmation" />
                 <h2>THANK YOU <br />FOR YOUR ORDER</h2>

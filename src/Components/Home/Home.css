@@ -83,7 +83,6 @@
 }
 
 .yx1-earphones-img{
-    height: 200px;
     width: 87%;
     border-radius: 5px;
 }
@@ -96,7 +95,7 @@
     margin-top: 4rem;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 600px) {
     .yx1-earphones {
         flex-direction: row;
         justify-content: space-evenly;

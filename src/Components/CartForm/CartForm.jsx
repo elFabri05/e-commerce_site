@@ -53,14 +53,15 @@ function CartForm() {
                                     </div>
                                 )
 
-        const NavScrollToTop = () => {
-            navigate(-1)
-
+    const NavScrollToTop = () => {
+        navigate(-1);
+        setTimeout(() => {
             window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-            }
+            top: 0,
+            behavior: 'smooth'
+            });
+        }, 100);
+        }
 
     const togglePassedOrder = ()=> {
         setPassedOrder(!passedOrder)

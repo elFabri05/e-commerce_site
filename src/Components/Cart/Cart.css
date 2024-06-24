@@ -47,6 +47,11 @@
     margin-bottom: 1.5rem;
 }
 
+.checkout-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
 .cart-wrapper .counter{
     width: 97px;
     font-weight: 400;
