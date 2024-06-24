@@ -147,7 +147,7 @@
     margin-top: 3rem;
 }
 
-@media(min-width:375px){
+@media(min-width:530px){
     .product-wrapper{
         display: grid;
         grid-template-columns: 1fr 1fr;
